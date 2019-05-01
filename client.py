@@ -22,5 +22,5 @@ def get_redis_client():
             db=os.getenv('REDIS_DB'),
             password=os.getenv('REDIS_PASSWORD')
         )
-    assert redis_client.ping()
+    assert redis_client.ping()  # check if connection is successful
     return redis_client
