@@ -13,14 +13,14 @@ from exceptions import RateLimitExceeded
 
 def rate_per_second(count):
     def _rate_per_second(function):
-        def __rate_per_second():
+        def __rate_per_second(*args, **kwargs):
             client = get_redis_client()
             key = f"rate-limit:{int(time.time())}"
             if client.incr(key) > count:
                 if client.ttl(key) == -1:  # timeout is not set
                     client.expire(key, 1)  # expire in 1 second
                 raise RateLimitExceeded
-            return function()
+            return function(*args, *kwargs)
         return __rate_per_second
     return _rate_per_second
 
