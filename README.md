@@ -1,6 +1,6 @@
 # Rate Limiting with Python and Redis
 
-Sample application for the blog [Rate Limiting with Python and Redis](https://blog.easyaspy.org/post/11/2019-05-01-rate-limiting-with-python-and-redis)
+Sample application for the blog [Rate Limiting with Python and Redis](https://ron.sh/rate-limiting-with-python-and-redis/)
 
 ## Examples
 
